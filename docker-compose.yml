@@ -55,7 +55,7 @@ services:
       # prettier-ignore
       test: ['CMD-SHELL', 'wget -q --spider --proxy=off localhost:4000/api/v1/streaming/health || exit 1']
     ports:
-      - '127.0.0.1:4000:4000'
+      - '9998:4000'
     depends_on:
       - db
       - redis
