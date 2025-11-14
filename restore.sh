@@ -1,4 +1,5 @@
 #!/bin/bash
+set -euo pipefail
 
 # Ensure working directory is project root
 __dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
