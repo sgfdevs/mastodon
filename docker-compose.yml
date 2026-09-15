@@ -23,7 +23,7 @@ services:
       - redis:/data
 
   web:
-    image: ghcr.io/mastodon/mastodon:v4.6.8
+    image: ghcr.io/mastodon/mastodon:v4.7.2
     restart: always
     env_file: .env.production
     command: bundle exec puma -C config/puma.rb
@@ -43,7 +43,7 @@ services:
       - ./data/system:/mastodon/public/system
 
   streaming:
-    image: ghcr.io/mastodon/mastodon-streaming:v4.6.8
+    image: ghcr.io/mastodon/mastodon-streaming:v4.7.2
     restart: always
     env_file: .env.production
     command: node ./streaming/index.js
@@ -60,7 +60,7 @@ services:
       - redis
 
   sidekiq:
-    image: ghcr.io/mastodon/mastodon:v4.6.8
+    image: ghcr.io/mastodon/mastodon:v4.7.2
     restart: always
     env_file: .env.production
     command: bundle exec sidekiq
