@@ -8,7 +8,6 @@ services:
     healthcheck:
       test: ['CMD', 'pg_isready', '-h', '127.0.0.1', '-U', 'postgres']
     volumes:
-      # PostgreSQL 18 uses a new volume. Restore the PG14 dump before starting Mastodon.
       - postgres18:/var/lib/postgresql
     environment:
       - 'POSTGRES_HOST_AUTH_METHOD=trust'
@@ -82,7 +81,6 @@ networks:
     internal: true
 
 volumes:
-  # Keep the PostgreSQL 14 volume for rollback.
   postgres:
   postgres18:
   redis:
