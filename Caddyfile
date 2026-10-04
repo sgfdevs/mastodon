@@ -1,0 +1,10 @@
+social.sgf.dev {
+	@streaming path /api/v1/streaming*
+	handle @streaming {
+		reverse_proxy streaming:4000
+	}
+
+	handle {
+		reverse_proxy web:3000
+	}
+}
